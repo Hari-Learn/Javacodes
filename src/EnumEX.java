@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 enum Day{
     MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;
 
@@ -8,7 +10,12 @@ enum Day{
 public class EnumEX {
 
     public static void main(String[] args) {
-        Day today = Day.FRIDAY;
+        System.out.println("Enter the day :");
+        Scanner in = new Scanner(System.in);
+        String inoutDay =  in.nextLine();
+        Day today = Day.valueOf(inoutDay.toUpperCase());
+
+        //Day today = Day.FRIDAY;
         switch (today){
             case MONDAY:
                 System.out.println("Start of the week");
