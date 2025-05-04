@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 enum Day{
@@ -5,6 +6,7 @@ enum Day{
 
     public boolean isWeekend(){
         return this == SATURDAY || this == SUNDAY;
+
     }
 }
 public class EnumEX {
@@ -36,6 +38,13 @@ public class EnumEX {
             System.out.println(today + "is a weekday");
         }
 
+        System.out.println("Enumeration using for");
+        for(Day day : Day.values()){
+            System.out.println( "--> "+day);
+        }
+        System.out.println("Using lambda");
+        Arrays.stream(Day.values()).forEach(day -> System.out.println(day));
+        Arrays.stream(Day.values()).forEach(System.out::println);
     }
 
 }
