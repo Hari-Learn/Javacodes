@@ -9,5 +9,7 @@ public class HTEx {
         for(Integer i : student.keySet()){
             System.out.println(i +"<-K - V-> >"+student.get(i));
         }
+        System.out.println("Using lambda");
+        student.forEach((i,str)-> System.out.println("K-"+i+" V-"+str));
     }
 }
