@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -21,8 +22,16 @@ public class LHMEx {
             System.out.println("--->>"+str);
         }
         System.out.println("Using lambda");
-
         lhm.forEach((Integer i, String str) -> System.out.println(i+"<->"+str));
 
+        System.out.println("Using text array to assign elements");
+        Map<Integer,String> lhms = new LinkedHashMap<>();
+        String str = "I have started learning devops by understanding linux first and then move to aws docker kubernetes ansible";
+        String[] strArr = str.split(" ");
+        for(int i = 0; i<strArr.length;i++){
+            System.out.println("------>>>"+strArr[i]);
+            lhms.put(i+1,strArr[i]);
+        }
+        lhms.forEach((Integer i,String strs)->System.out.println(i +"<<<-->>>"+strs));
     }
 }
