@@ -1,6 +1,7 @@
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 public class LHMEx {
     public static void main(String[] args) {
@@ -19,6 +20,9 @@ public class LHMEx {
         for(String str : lhm.values()){
             System.out.println("--->>"+str);
         }
+        System.out.println("Using lambda");
+
+        lhm.forEach((Integer i, String str) -> System.out.println(i+"<->"+str));
 
     }
 }
