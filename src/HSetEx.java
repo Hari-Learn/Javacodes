@@ -9,6 +9,8 @@ public class HSetEx {
         hs.add("b");
         hs.add("x");
         hs.add("a");
+        hs.add("bc");
+        hs.add("d");
         System.out.println(hs);
         System.out.println("Iteration using old way");
         Iterator<String> itr = hs.iterator();
