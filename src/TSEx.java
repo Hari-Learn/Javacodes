@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -15,6 +16,10 @@ public class TSEx {
         }
         System.out.println("Using Lambda");
         tset.forEach(s-> System.out.println("--> "+s));
-
+        System.out.println("Using old iteration method");
+        Iterator<String> itr = tset.iterator();
+        while (itr.hasNext()){
+            System.out.println("->>> "+itr.next());
+        }
     }
 }
