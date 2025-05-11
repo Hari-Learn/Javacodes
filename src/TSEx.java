@@ -13,6 +13,8 @@ public class TSEx {
         for(String st : tset){
             System.out.println(st);
         }
+        System.out.println("Using Lambda");
+        tset.forEach(s-> System.out.println("--> "+s));
 
     }
 }
