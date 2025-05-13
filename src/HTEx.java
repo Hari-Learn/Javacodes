@@ -11,5 +11,7 @@ public class HTEx {
         }
         System.out.println("Using lambda");
         student.forEach((i,str)-> System.out.println("K-"+i+" V-"+str));
+
+
     }
 }
