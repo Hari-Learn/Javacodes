@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -21,7 +22,11 @@ public class LinkList {
         System.out.println("using for each");
         ls.forEach(s-> System.out.println("===> "+s));
 
+        System.out.println("Backward iteration in linked list");
 
+        while (itr.hasPrevious()){
+            System.out.println("<<<<==== "+itr.previous());
+        }
 
     }
 }
