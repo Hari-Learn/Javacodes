@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +27,15 @@ public class StreamIMO {
         List<String> oneLs = lss.stream().flatMap(List::stream).collect(Collectors.toList());
         //System.out.println(oneLs.forEach(s->s.toUpperCase()));
         oneLs.forEach(s-> System.out.println(s.toUpperCase()));
-
+        System.out.println("4.Distinct ops");
+        System.out.println("Distinct items : "+al.stream().distinct().collect(Collectors.toList()));
+        System.out.println("5.sorted example");
+        System.out.println("Sorted items :"+ls.stream().sorted().collect(Collectors.toList()));
+        System.out.println("Sorted in reverse order :"+ls.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+        System.out.println("Peek for debugging purpose ");
+        System.out.println("Peeking : "+ls.stream()
+                        .peek(s-> System.out.println("original b4 mapping :"+ s))
+                .map(String::toUpperCase).collect(Collectors.toList()));
 
     }
 }
