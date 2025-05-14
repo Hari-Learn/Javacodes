@@ -16,7 +16,16 @@ public class StreamIMO {
         List<String> ls = Arrays.asList("aws","bashscript","code","docker","ec2","fargate","git","hashcorp","iam","jfrog","kuber","linux");
         System.out.println(ls.stream().map(s->s.toUpperCase()).collect(Collectors.toList()));
         System.out.println(ls.stream().map(s->s.toUpperCase()).filter(s -> s.length()<=3 ).collect(Collectors.toList()));
+        System.out.println("3.flatmap operation");
 
+        List<List<String>> lss = Arrays.asList(
+                Arrays.asList("a,b,c"),
+                Arrays.asList("aa,bb,cc")
+        );
+
+        List<String> oneLs = lss.stream().flatMap(List::stream).collect(Collectors.toList());
+        //System.out.println(oneLs.forEach(s->s.toUpperCase()));
+        oneLs.forEach(s-> System.out.println(s.toUpperCase()));
 
 
     }
