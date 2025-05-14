@@ -36,6 +36,10 @@ public class StreamIMO {
         System.out.println("Peeking : "+ls.stream()
                         .peek(s-> System.out.println("original b4 mapping :"+ s))
                 .map(String::toUpperCase).collect(Collectors.toList()));
-
+        System.out.println("Limit operation in streams");
+        System.out.println("First 3 items only :"+ls.stream().limit(3).collect(Collectors.toList()));
+        System.out.println("Skip operation in streams");
+        System.out.println("B4 skipping :"+ls.stream().sorted().collect(Collectors.toList()));
+        System.out.println("Skipped the first 4 elements "+ls.stream().skip(4).collect(Collectors.toSet()));
     }
 }
