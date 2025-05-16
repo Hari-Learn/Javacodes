@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class StreamsOpsEx {
     public static void main(String[] args) {
@@ -17,7 +15,7 @@ public class StreamsOpsEx {
         System.out.println(test);
 
         System.out.println("Using findFirst");
-        List<String> as = Arrays.asList("Ambi","Ajju","Cathe","Diana","Eille","Fathima","Balu");
+        List<String> as = Arrays.asList("Ambi","Ajju","Cathe","Diana","Eille","Fathima","Balu","bob");
         Optional<String> findingFirstA = as.stream()
                 .filter(s -> s.startsWith("A"))
                  .findFirst();
@@ -25,7 +23,28 @@ public class StreamsOpsEx {
         System.out.println("Using contain with findFirst");
         Optional<String> findingAny = as.stream().filter(s -> s.contains("na")).findFirst();
         findingAny.ifPresent(s -> System.out.println("Gotcha :"+s));
+        System.out.println("using min and max terminal operator");
+        Optional<Integer> minOps = list.stream().min(Integer::compareTo);
+        Optional<Integer> maxOps = list.stream().max(Integer::compareTo);
+        minOps.ifPresent(integer -> System.out.println("Minimum : "+integer));
+        maxOps.ifPresent(integer -> System.out.println("Maximum :"+integer));
 
+        Optional<String> compareStringLength = as.stream().max((s1,s2)->Integer.compare(s1.length(),s2.length()));
+        Optional<String> compareStringLengths = as.stream().min((s1,s2)->Integer.compare(s1.length(),s2.length()));
+        compareStringLength.ifPresent(s -> System.out.println("Longest String : "+s));
+        compareStringLengths.ifPresent(s -> System.out.println("Shortest string : "+s));
+        System.out.println("🎥 ");
+        Map<String,Double> movies = new HashMap<>();
+        movies.put("The Dark Knight Rises",8.5);
+        movies.put("Inception",9.0);
+        movies.put("The Adventure of Tintin",8.0);
+        movies.put("The Gangs of NewYork",7.5);
+        movies.put("Skyfall",8.3);
+        movies.put("The Hateful Eight",7.4);
+        Map.Entry<String,Double> worstMovie = movies.entrySet().stream().min(Map.Entry.comparingByValue()).orElseThrow();
+        Map.Entry<String,Double> bestMovie = movies.entrySet().stream().max(Map.Entry.comparingByValue()).orElseThrow();
+        System.out.println("🎥 "+worstMovie.getKey() + "--> "+worstMovie.getValue());
+        System.out.println("🎥 "+bestMovie.getKey() + "--> "+bestMovie.getValue());
 
     }
 }
