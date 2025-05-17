@@ -11,9 +11,12 @@ public class PByEx {
         System.out.println("Even :"+ls.get(true));
         System.out.println("Odd :"+ls.get(false));
 
-        List<String> lst = Arrays.asList("Anju","Bilal","Cathe","Daniel","Ellai");
+        List<String> lst = Arrays.asList("Anju","Atlee","Andal","Bilal","Cathe","Daniel","Ellai");
         Map<Boolean,List<String>> mp = lst.stream().collect(Collectors.partitioningBy(n->n.length()>=5));
         System.out.println(mp.get(true));
         System.out.println(mp.get(false));
+        Map<Boolean,List<String>> map = lst.stream().collect(Collectors.partitioningBy(s -> s.startsWith("A")));
+        System.out.println(map.get(true));
+        System.out.println(map.get(false));
     }
 }
