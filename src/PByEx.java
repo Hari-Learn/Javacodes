@@ -16,7 +16,14 @@ public class PByEx {
         System.out.println(mp.get(true));
         System.out.println(mp.get(false));
         Map<Boolean,List<String>> map = lst.stream().collect(Collectors.partitioningBy(s -> s.startsWith("A")));
+        Map<Boolean,Long> maps = lst.stream().collect(Collectors.partitioningBy(s -> s.startsWith("A"),Collectors.counting()));
         System.out.println(map.get(true));
         System.out.println(map.get(false));
+        System.out.println(map.get(false));
+        System.out.println("With counting");
+        System.out.println(maps.get(true));
+        System.out.println(maps.get(false));
+
+
     }
 }
