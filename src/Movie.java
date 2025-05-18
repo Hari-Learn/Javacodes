@@ -1,8 +1,19 @@
 public class Movie {
 
     String title;
-    int durationTimes;
 
+
+
+    int durationTimes;
+    double rating;
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 
     public int getDurationTimes() {
         return durationTimes;
@@ -25,14 +36,21 @@ public class Movie {
         this.durationTimes = durationTimes;
 
     }
+
+    public Movie(String title,int durationTimes,double rating) {
+        this.title = title;
+        this.durationTimes = durationTimes;
+        this.rating=rating;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
-                "durationTimes=" + durationTimes +
-                ", title='" + title + '\'' +
+                "title='" + title + '\'' +
+                ", durationTimes=" + durationTimes +
+                ", rating=" + rating +
                 '}';
     }
-
 
 
 }
