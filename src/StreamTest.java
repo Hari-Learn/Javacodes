@@ -1,10 +1,9 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-<<<<<<< HEAD
+
 import java.util.Map;
-=======
->>>>>>> 0eb2c996b4fe61fb78c8f0fca5cae0c3be4cd35c
+
 import java.util.stream.Collectors;
 
 public class StreamTest {
