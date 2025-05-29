@@ -29,7 +29,7 @@ public class LHMEx {
         String str = "I have started learning devops by understanding linux first and then move to aws docker kubernetes ansible";
         String[] strArr = str.split(" ");
         for(int i = 0; i<strArr.length;i++){
-            System.out.println("------>>>"+strArr[i]);
+            //System.out.println("------>>>"+strArr[i]);
             lhms.put(i+1,strArr[i]);
         }
         lhms.forEach((Integer i,String strs)->System.out.println(i +"<<<-->>>"+strs));
