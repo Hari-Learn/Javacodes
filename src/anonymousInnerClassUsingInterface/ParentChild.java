@@ -12,6 +12,7 @@ public class ParentChild implements Parent {
             @Override
             public void partnerSettling() {
                 System.out.println("Testing");
+                System.out.println("Test again");
             }
         };
         ps.partnerSettling();
